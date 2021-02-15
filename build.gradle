@@ -1,0 +1,21 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'java-library'
+}
+
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+dependencies {
+    //api files('lib/logback-classic-1.2.3.jar',)
+    api fileTree(dir: 'lib', include: ['*.jar'])
+
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    // implementation 'com.google.guava:guava:27.0.1-jre'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
